@@ -1,0 +1,8 @@
+Style/EndOfLine:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
