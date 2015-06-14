@@ -1,8 +1,11 @@
-require 'codeclimate-test-reporter'
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 require 'byebug'
 require 'typekitter'
 require 'fakefs/spec_helpers'
 
-CodeClimate::TestReporter.start
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
