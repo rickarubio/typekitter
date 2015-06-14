@@ -1,5 +1,2 @@
-require "typekitter/version"
-
-module Typekitter
-  # Your code goes here...
-end
+require 'typekitter/version'
+require 'typekitter/token'
