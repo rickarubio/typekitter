@@ -3,6 +3,18 @@ require 'spec_helper'
 describe Typekitter::Token do
   include FakeFS::SpecHelpers
 
+  describe '.setup' do
+    it 'calls .save and .load' do
+      allow(Typekitter::Token).to receive(:save)
+      allow(Typekitter::Token).to receive(:load)
+
+      Typekitter::Token.setup('foo bar token')
+
+      expect(Typekitter::Token).to have_received(:save)
+      expect(Typekitter::Token).to have_received(:load)
+    end
+  end
+
   describe '.save' do
     context 'given a string representing the token\'s value' do
       it 'writes a file to the disk with the given value' do

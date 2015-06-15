@@ -12,6 +12,11 @@ module Typekitter
       "#{Dir.pwd}/#{DEFAULT_TOKEN_NAME}"
     end
 
+    def self.setup(value)
+      save(value)
+      self.load
+    end
+
     def self.save(value)
       File.open(token_path, 'w') do |file|
         file.write(value)
