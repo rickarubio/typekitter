@@ -3,10 +3,7 @@
 [![Build Status](https://travis-ci.org/rickarubio/typekitter.svg?branch=master)](https://travis-ci.org/rickarubio/typekitter)
 
 # Typekitter
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/typekitter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Allows you to interact with typekit APIs with a ruby client
 
 ## Installation
 
@@ -25,8 +22,29 @@ Or install it yourself as:
     $ gem install typekitter
 
 ## Usage
+```
+typekitter commands:
+  typekitter display_token            # Displays the current token in use
+  typekitter help [COMMAND]           # Describe available commands or one specific command
+  typekitter kits_create --name=NAME  # Creates a new draft kit, returns kit info. See help for options
+  typekitter kits_index               # Display a list of all your typekits
+  typekitter save_token [value]       # Saves the token to .typekitter-token
+```
 
-TODO: Write usage instructions here
+Use the help command to get more information about commands:
+
+```
+Usage:
+  typekitter kits_create --name=NAME
+
+Options:
+  --name=NAME
+  [--domains=DOMAINS]
+  [--families=FAMILIES]
+  [--segmented-names=SEGMENTED_NAMES]
+
+Creates a new draft kit, returns kit info. See help for options
+```
 
 ## Development
 
