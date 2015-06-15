@@ -26,7 +26,7 @@ describe Typekitter::CLI do
 
       cli.save_token(token_value)
 
-      expect(Typekitter::CLI.class_variable_get(:@@token).value).to eq(
+      expect(cli.instance_variable_get(:@token).value).to eq(
         token_value
       )
       expect(Typekitter::Token).to have_received(:setup).with(token_value)

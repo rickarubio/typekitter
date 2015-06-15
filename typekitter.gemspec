@@ -24,6 +24,10 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_runtime_dependency "thor"
+  spec.add_runtime_dependency "typhoeus"
+  spec.add_runtime_dependency "awesome_print"
+  spec.add_runtime_dependency "webmock"
+  spec.add_runtime_dependency "json"
   spec.add_development_dependency "aruba"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"

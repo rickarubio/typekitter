@@ -1,4 +1,8 @@
 require 'thor'
+require 'typhoeus'
+require 'json'
+require 'awesome_print'
 require 'typekitter/version'
 require 'typekitter/token'
+require 'typekitter/api_client'
 require 'typekitter/cli'
