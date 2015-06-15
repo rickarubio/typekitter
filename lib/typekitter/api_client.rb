@@ -17,6 +17,25 @@ module Typekitter
       end
     end
 
+    def kits_create(options={})
+      kit = Typhoeus.post(
+        ENDPOINTS[:kits_index],
+        headers: { 'X-Typekit-Token' => Typekitter::Token.load.value },
+        body: {
+          name: options[:name],
+          domains: options[:domains],
+          families: options[:families],
+          segmented_names: options[:segmented_names]
+        }
+      )
+
+      if kit.success?
+        JSON.parse(kit.body)
+      else
+        error_message(kit.body)
+      end
+    end
+
     private
 
     def error_message(description)

@@ -26,4 +26,18 @@ class Typekitter::CLI < Thor
   def kits_index
     ap @client.kits_index, index: false
   end
+
+  desc 'kits_create', 'Creates a new draft kit, returns kit info. See help for options'
+  option :name, required: true
+  option :domains
+  option :families
+  option :segmented_names
+  def kits_create
+    ap @client.kits_create(
+      name: options[:name],
+      domains: options[:domains],
+      families: options[:families],
+      segmented_names: options[:segmented_names]
+    ), index: false
+  end
 end
